@@ -181,7 +181,10 @@ const findTheNeedle = findIt => {
  * strings and returns the index of the string that contains
  *  the word `needle` inside
  */
-
+const findTheNeedleIndex = indexIt => {
+  let result = indexIt.findIndex((indexIt, index) => indexIt.includes('needle'))
+  return result
+}
 // ...
 
 /*
@@ -189,7 +192,15 @@ const findTheNeedle = findIt => {
  * strings and returns true if at least one string is exactly
  * four characters long
  */
-
+// const someoneToLove = words => {
+//   let checker = false
+//   words.forEach(word => {
+//     if(word.length === 4){
+//       checker = true
+//     }
+//   })
+//   return checker
+// }
 // ...
 
 /*
