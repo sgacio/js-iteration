@@ -192,15 +192,15 @@ const findTheNeedleIndex = indexIt => {
  * strings and returns true if at least one string is exactly
  * four characters long
  */
-// const someoneToLove = words => {
-//   let checker = false
-//   words.forEach(word => {
-//     if(word.length === 4){
-//       checker = true
-//     }
-//   })
-//   return checker
-// }
+const someoneToLove = words => {
+  let checker = false
+  words.forEach(word => {
+    if (word.length === 4) {
+      checker = true
+    }
+  })
+  return checker
+}
 // ...
 
 /*
