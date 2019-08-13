@@ -62,7 +62,11 @@
  *    // your code here
  * }
  */
-
+const yelling = bills => {
+  return bills.map(bill => {
+    return bill.toUpperCase()
+  })
+}
 // ...
 
 /**
@@ -72,28 +76,51 @@
  * the numbers multiplied by 2
  */
 
-// ...
-
+// // ...
+// const doubleTrouble = numbers => {
+//   let array = []
+//   for (let i = 0; i < numbers.length; i++) {
+//     array[i] = (numbers[i] * 2)
+//   }
+//   return array
+// }
+const doubleTrouble = numbers => {
+  return numbers.map(x => x * 2)
+}
 /*
  * Define a function stringyIndexes() that takes an array of
  * strings as an argument and returns a new array with each string
  * suffixed with " is at index X" where X is the index of the element
  */
-
+const stringyIndexes = people => {
+  return people.map((people, index) => {
+    return people + ' is at index ' + index
+  })
+}
 // ...
 
 /*
  * Define a function onlyTheEvenSurvive that accepts an array of
  * numbers and returns only the elements that are even
  */
-
+const onlyTheEvenSurvive = evens => {
+  let ret = evens.filter(even => {
+    if (even % 2 === 0) {
+      return even
+    }
+  })
+  return ret
+}
 // ...
 
 /*
  * Define a function onlyTheEvenIndexedSurvive that accepts an array of
  * numbers and returns only the elements at indexes that are even
  */
-
+const onlyTheEvenIndexedSurvive = (marks, index) => {
+  let ret = marks.filter((m, i) => i % 2 === 0);
+  return ret
+}
 // ...
 
 /*
@@ -109,6 +136,15 @@
  *   score: 99
  * }
  */
+const bestMoviesOfTheYear = (movie, year) => {
+  let whatYear = movie.filter(movie =>
+    movie.score > 90 && movie.year == year)
+  const newList = []
+  whatYear.forEach(movie => {
+    newList.push(movie.name)
+  })
+  return newList
+}
 
 // ...
 
@@ -117,7 +153,16 @@
  * numbers and returns true if every element of the array is
  * odd.
  */
-
+const everyoneIsOdd = areWeTrue => {
+  let isItEven = areWeTrue.filter(number => {
+    return number % 2 !== 0
+  })
+  if (areWeTrue.length === isItEven.length) {
+    return true
+  } else {
+    return false
+  }
+}
 // ...
 
 /*
@@ -302,15 +347,46 @@ test('onlyTheEvenIndexedSurvive', t => {
 
 test('Function Check', t => ensureDefined(t, 'bestMoviesOfTheYear'))
 test('bestMoviesOfTheYear', t => {
-  const movies = [
-    { name: 'The Grand Budapest Hotel', year: 2014, score: 91 },
-    { name: 'Birdman', year: 2014, score: 91 },
-    { name: 'Transformers: Age of Extinction', year: 2014, score: 18 },
-    { name: 'Rage', year: 2014, score: 14 },
-    { name: 'Get Out', year: 2017, score: 99 },
-    { name: 'Justice League', year: 2017, score: 40 },
-    { name: 'Ghost in the Shell', year: 2017, score: 46 },
-    { name: 'The Big Sick', year: 2017, score: 98 }
+  const movies = [{
+      name: 'The Grand Budapest Hotel',
+      year: 2014,
+      score: 91
+    },
+    {
+      name: 'Birdman',
+      year: 2014,
+      score: 91
+    },
+    {
+      name: 'Transformers: Age of Extinction',
+      year: 2014,
+      score: 18
+    },
+    {
+      name: 'Rage',
+      year: 2014,
+      score: 14
+    },
+    {
+      name: 'Get Out',
+      year: 2017,
+      score: 99
+    },
+    {
+      name: 'Justice League',
+      year: 2017,
+      score: 40
+    },
+    {
+      name: 'Ghost in the Shell',
+      year: 2017,
+      score: 46
+    },
+    {
+      name: 'The Big Sick',
+      year: 2017,
+      score: 98
+    }
   ]
 
   t.deepEqual(bestMoviesOfTheYear(movies, 2014), [
