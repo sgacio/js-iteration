@@ -211,6 +211,13 @@ const someoneToLove = words => {
  *
  * So no using forEach, map, filter, reduce, etc.
  */
+const mapYourself = numbers => {
+  let array = []
+  for (let i = 0; i < numbers.length; i++) {
+    array[i] = (numbers[i] * 2)
+  }
+  return array
+}
 
 // ...
 
