@@ -170,7 +170,10 @@ const everyoneIsOdd = areWeTrue => {
  * strings and returns the one string that contains the word
  * `needle` inside
  */
-
+const findTheNeedle = findIt => {
+  let result = findIt.filter(findIt => findIt.includes('needle'))
+  return result.toString()
+}
 // ...
 
 /*
